@@ -1,0 +1,24 @@
+// common
+@import "./common/reset";
+@import "./common/header";
+
+// contents
+@import "./contents/index";
+@import "./contents/section1";
+@import "./contents/test1";
+@import "./contents/section3";
+@import "./contents/test5";
+
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}

@@ -1,0 +1,26 @@
+main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  section {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1;
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font: bold 45px/1.5 "arial";
+
+      &:hover {
+        color: #555;
+        cursor: pointer;
+      }
+    }
+  }
+}

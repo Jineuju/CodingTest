@@ -1,0 +1,515 @@
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+}
+header .inner {
+  width: 100%;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+}
+header .inner .logo {
+  position: absolute;
+  top: 15px;
+  left: 15%;
+  z-index: 11;
+}
+header .inner .gnbWrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+}
+header .inner .gnbWrap .bgGnb {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+}
+header .inner .gnbWrap #gnb {
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  text-align: center;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+header .inner .gnbWrap #gnb li {
+  float: left;
+  width: 15vw;
+  position: relative;
+}
+header .inner .gnbWrap #gnb li:hover a {
+  background-color: #333;
+  color: #fff;
+}
+header .inner .gnbWrap #gnb li:hover.on a {
+  background-color: #333;
+  color: #fff;
+}
+header .inner .gnbWrap #gnb li a {
+  display: block;
+  width: 100%;
+  height: 70px;
+  font: bold 26px/70px "맑은 고딕";
+  color: #000;
+  transition: all 0.5s;
+}
+header .inner .gnbWrap #gnb li .sub {
+  position: absolute;
+  top: 70px;
+  left: 0px;
+  text-align: center;
+  overflow: hidden;
+  display: none;
+  transition: all 0.5s;
+}
+header .inner .gnbWrap #gnb li .sub li a {
+  display: block;
+  width: 100%;
+  height: 50px;
+  font: 16px/50px "맑은 고딕";
+  color: #ddd;
+  text-align: center;
+  background-color: #666;
+  transition: all 0.3s;
+}
+header .inner .gnbWrap #gnb li .sub li a:hover {
+  background-color: #e9e9e9;
+  color: #111;
+}
+header .inner .btnCall {
+  position: absolute;
+  top: 40%;
+  right: 10vw;
+  width: 40px;
+  height: 40px;
+  display: none;
+  z-index: 11;
+}
+header .inner .btnCall::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: top 0.5s 0s, transform 0.5s 0.5s;
+}
+header .inner .btnCall::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: bottom 0.5s 0s, transform 0.5s 0.5s;
+}
+header .inner .btnCall span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  text-indent: -9999px;
+  transition: 0.5s;
+}
+header .inner .btnCall.on::before {
+  top: 50%;
+  margin-top: -1px;
+  transform: rotate(45deg);
+}
+header .inner .btnCall.on::after {
+  bottom: 50%;
+  margin-bottom: -1px;
+  transform: rotate(-45deg);
+}
+header .inner .btnCall.on span {
+  transform: translate(100%);
+  opacity: 0;
+}
+header .inner .menuMo {
+  width: 270px;
+  height: 100%;
+  background-color: #111;
+  position: fixed;
+  top: 0;
+  left: -270px;
+  z-index: 50;
+  padding: 40px 30px;
+  transition: all 0.5s;
+  display: none;
+}
+header .inner .menuMo.on {
+  left: 0;
+}
+header .inner .menuMo .gnbMo {
+  border-top: 1px solid #ccc;
+  padding-top: 40px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+header .inner .menuMo .gnbMo li a {
+  font: bold 30px/1 "arial";
+  color: #fff;
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
+}
+header .inner .menuMo .gnbMo li .sub li a {
+  font: 18px/1 "arial";
+  color: #ddd;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: all 0.5s;
+}
+header .inner .menuMo .gnbMo li .sub li:hover a {
+  color: #61001f;
+}
+
+@media screen and (max-width: 1280px) {
+  header .inner {
+    height: 150px;
+  }
+}
+@media screen and (max-width: 768px) {
+  header .inner .gnbWrap #gnb {
+    display: none;
+  }
+  header .inner .btnCall {
+    display: block;
+  }
+  header .inner .menuMo {
+    display: block;
+  }
+  header .inner .menuMo.on {
+    left: 0px;
+  }
+}
+main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+main section {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1;
+}
+main section span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font: bold 45px/1.5 "arial";
+}
+main section span:hover {
+  color: #555;
+  cursor: pointer;
+}
+
+#slide {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#slide .frame {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#slide .frame li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#slide .frame li img {
+  width: 100%;
+  height: 100%;
+}
+
+#slider {
+  width: 20vw;
+  height: 40vh;
+  position: relative;
+  margin: 100px auto;
+  margin-top: 250px;
+}
+#slider ul {
+  position: absolute;
+  top: 0vh;
+  left: 0;
+  margin-left: 0;
+  width: 300%;
+  height: 100%;
+  transition: 1s;
+}
+#slider ul li {
+  width: 33.3333333333%;
+  height: 100%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#slider ul li img {
+  width: 100%;
+  height: 40vh;
+}
+
+.prev {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  margin-top: -50px;
+}
+
+.next {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  margin-top: -50px;
+}
+
+@media screen and (max-width: 1280px) {
+  #slider {
+    width: 50vw;
+    height: 40vh;
+    position: relative;
+    margin: 100px auto;
+    margin-top: 250px;
+  }
+  #slider ul {
+    position: absolute;
+    top: 0vh;
+    left: 50%;
+    margin-left: 0;
+    width: 300%;
+    height: 100%;
+    transition: 1s;
+  }
+  #slider ul li {
+    width: 33.3333333333%;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #slider ul li img {
+    width: 50%;
+    height: 40vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  #slider {
+    width: 100vw;
+    overflow: hidden;
+  }
+  #slider ul {
+    left: 0;
+  }
+}
+.s3 {
+  width: 100%;
+  position: relative;
+  display: flex;
+  transform: translate(33%, 40%);
+}
+.s3 div {
+  width: 200px;
+  height: 200px;
+  background-color: #a50034;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 40px;
+  border: 2px solid #000;
+}
+.s3 div:nth-child(1) {
+  background-color: #000;
+  transition: 1000ms;
+  cursor: pointer;
+}
+.s3 div:nth-child(1):hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border: 2px solid #000;
+}
+.s3 div:nth-child(2) {
+  background-color: #f90;
+}
+.s3 div:nth-child(2):hover {
+  background-color: #2ca;
+  border: 20px solid #00c;
+}
+.s3 div:nth-child(3) {
+  background-color: #aaa;
+  position: relative;
+}
+.s3 div:nth-child(3):before {
+  content: "본 페이지 접근 후 클릭한 횟수";
+  font: bold 14px/100px "arial";
+  text-align: center;
+  display: block;
+  width: 200px;
+  height: 100px;
+  background-color: #e991ad;
+  position: absolute;
+  top: 0;
+}
+.s3 div:nth-child(3):after {
+  content: "3번 div를 클릭한 횟수";
+  font: bold 18px/100px "arial";
+  text-align: center;
+  display: block;
+  width: 200px;
+  height: 100px;
+  background-color: #2ca;
+  position: absolute;
+  bottom: 0;
+}
+
+@media screen and (max-width: 1280px) {
+  .s3 div {
+    margin-right: 20px;
+    border: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .s3 {
+    width: 100%;
+    display: block;
+    transform: translate(0, 0);
+  }
+  .s3 div {
+    width: 200px;
+    height: 200px;
+    border: none;
+    margin: 40px auto;
+  }
+}
+body {
+  background-color: #eee;
+}
+body #main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+body #main .container {
+  position: relative;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body #main .container #left,
+body #main .container #right {
+  width: 120px;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  border-radius: 10px;
+  box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.7), 5px 5px 9px rgba(94, 104, 121, 0.7);
+}
+body #main .container #left .list,
+body #main .container #right .list {
+  margin: 10px 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.7), 5px 5px 9px rgba(94, 104, 121, 0.7);
+  cursor: grab;
+}
+body #main .container #left .list span,
+body #main .container #right .list span {
+  font: 15px/1 "GmarketSansMedium";
+}
+body #main .wrap {
+  flex: 1;
+  width: 100%;
+  height: 100vh;
+  border-left: 3px solid rgba(0, 0, 0, 0.05);
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  position: relative;
+}
+body #main .wrap div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  transition: 0.7s;
+  transform: scale(0);
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  border-radius: 15px;
+  box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.7), 5px 5px 9px rgba(94, 104, 121, 0.7);
+  z-index: 2;
+}
+body #main .wrap div.on {
+  z-index: 3;
+  transform: scale(1);
+}
+body #main .wrap div h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font: bold 30px/1 "GmarketSansMedium";
+}
+
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,247 @@
+header {
+  width: 100%;
+
+  .inner {
+    width: 100%;
+    height: 150px;
+    margin: 0 auto;
+    position: relative;
+
+    // 로고
+    .logo {
+      position: absolute;
+      top: 15px;
+      left: 15%;
+      z-index: 11;
+    }
+
+    // gnb
+    .gnbWrap {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 10;
+
+      .bgGnb {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        z-index: 2;
+      }
+
+      #gnb {
+        position: absolute;
+        top: 30%;
+        left: 45%;
+        text-align: center;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+
+        li {
+          float: left;
+          width: 15vw;
+          position: relative;
+          &:hover {
+            a {
+              background-color: #333;
+              color: #fff;
+            }
+            &.on {
+              a {
+                background-color: #333;
+                color: #fff;
+              }
+            }
+          }
+          a {
+            display: block;
+            width: 100%;
+            height: 70px;
+            font: bold 26px/70px "맑은 고딕";
+            color: #000;
+            transition: all 0.5s;
+          }
+
+          .sub {
+            position: absolute;
+            top: 70px;
+            left: 0px;
+            text-align: center;
+            overflow: hidden;
+            display: none;
+            // 바닐라 자바스크립트에서 추가
+            transition: all 0.5s;
+
+            li {
+              a {
+                display: block;
+                width: 100%;
+                height: 50px;
+                font: 16px/50px "맑은 고딕";
+                color: #ddd;
+                text-align: center;
+                background-color: #666;
+                transition: all 0.3s;
+
+                &:hover {
+                  background-color: #e9e9e9;
+                  color: #111;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 햄버거버튼
+    .btnCall {
+      position: absolute;
+      top: 40%;
+      right: 10vw;
+      width: 40px;
+      height: 40px;
+      display: none;
+      z-index: 11;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: top 0.5s 0s, transform 0.5s 0.5s;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: bottom 0.5s 0s, transform 0.5s 0.5s;
+      }
+
+      span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        position: absolute;
+        top: 50%;
+        margin-top: -1px;
+        text-indent: -9999px;
+        transition: 0.5s;
+      }
+
+      &.on {
+        &::before {
+          top: 50%;
+          margin-top: -1px;
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          bottom: 50%;
+          margin-bottom: -1px;
+          transform: rotate(-45deg);
+        }
+
+        span {
+          transform: translate(100%);
+          opacity: 0;
+        }
+      }
+    }
+
+    .menuMo {
+      width: 270px;
+      height: 100%;
+      background-color: #111;
+      position: fixed;
+      top: 0;
+      left: -270px;
+      // left: 0;
+      z-index: 50;
+      padding: 40px 30px;
+      transition: all 0.5s;
+      display: none;
+
+      &.on {
+        left: 0;
+      }
+      .gnbMo {
+        border-top: 1px solid #ccc;
+        padding-top: 40px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 20px;
+        li {
+          a {
+            font: bold 30px/1 "arial";
+            color: #fff;
+            text-align: center;
+            display: block;
+            margin-bottom: 20px;
+          }
+          .sub {
+            li {
+              a {
+                font: 18px/1 "arial";
+                color: #ddd;
+                display: block;
+                text-align: center;
+                margin-bottom: 20px;
+                transition: all 0.5s;
+              }
+              &:hover {
+                a {
+                  color: #61001f;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1280px) {
+  header {
+    .inner {
+      height: 150px;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  header {
+    .inner {
+      // gnb
+      .gnbWrap {
+        #gnb {
+          display: none;
+        }
+      }
+
+      // 햄버거버튼
+      .btnCall {
+        display: block;
+      }
+
+      .menuMo {
+        display: block;
+
+        &.on {
+          left: 0px;
+        }
+      }
+    }
+  }
+}
